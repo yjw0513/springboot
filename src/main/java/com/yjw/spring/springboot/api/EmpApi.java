@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.yjw.spring.springboot.dao.entity.Emp;
 import com.yjw.spring.springboot.dto.Result;
+import com.yjw.spring.springboot.dto.emp.EmpResult;
 import com.yjw.spring.springboot.service.EmpService;
 
 import io.swagger.annotations.Api;
@@ -26,6 +27,14 @@ public class EmpApi {
 	public Result<?> list() {
 		List<Emp> list=empService.findAll();
 		return Result.success(list);
+	}
+	
+	@ApiOperation(value = "测试TABLE转游标", notes = "")
+	@PostMapping("/findTableChangeCursor")
+	public Result<?> findTableChangeCursor() {
+		EmpResult result=new EmpResult();
+		empService.findTableChangeCursor(result);;
+		return Result.success(result);
 	}
 	
 }
