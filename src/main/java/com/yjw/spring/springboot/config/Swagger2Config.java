@@ -1,7 +1,7 @@
 package com.yjw.spring.springboot.config;
 
 //swagger2的配置文件，在项目的启动类的同级文件建立
-
+//http://localhost:8080/swagger-ui.html
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
